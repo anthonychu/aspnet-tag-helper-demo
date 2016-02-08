@@ -1,0 +1,19 @@
+﻿@model TagHelperDemo.Mvc.Models.IndexModel
+@addTagHelper "*, GiphyTagHelper"
+@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    <form asp-controller="Home" asp-action="Index" method="get" asp-antiforgery="false">
+        <input asp-for="SearchTerm" /> <button type="submit">Giphy!</button>
+    </form>
+
+    <giphy search-term="@Model.SearchTerm" />
+
+</body>
+</html>
+
